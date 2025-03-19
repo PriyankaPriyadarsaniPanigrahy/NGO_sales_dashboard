@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Sales </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body { background-color: #f8f9fa; transition: background-color 0.3s ease; }
+        .container { margin-top: 20px; }
+        .table-container { max-height: 500px; overflow-y: auto; }
+        .sortable { cursor: pointer; }
+        .sortable:hover { text-decoration: underline; color: blue; }
+        .pagination { display: flex; justify-content: center; margin-top: 20px; }
+        .pagination button { margin: 2px; }
+        .dark-mode { background-color: #343a40; color: white; }
+        .dark-mode .table-dark { background-color: #212529 !important; }
+        .dark-mode .btn { background-color: #6c757d; border: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mb-4">📊NGO Sales </h2>
+
+    <!-- Dark Mode Toggle -->
+    <div class="text-end">
+        <button id="darkModeToggle" class="btn btn-dark">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search...">
+        </div>
+        <div class="col-md-3">
+            <select id="categoryFilter" class="form-control">
+                <option value="">📌 Filter by Category</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select id="locationFilter" class="form-control">
+                <option value="">📌 Filter by Location</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button id="resetFilters" class="btn btn-secondary w-100">🔄 Reset</button>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr id="tableHeader"></tr>
+            </thead>
+            <tbody id="salesData"></tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prevPage" class="btn btn-primary">⬅️ Prev</button>
+        <span id="pageInfo" class="mx-3"></span>
+        <button id="nextPage" class="btn btn-primary">Next ➡️</button>
+    </div>
+
+    <!-- Chart -->
+    <div class="text-center mt-4">
+        <h4>📈 Sales Revenue Chart</h4>
+        <canvas id="salesChart"></canvas>
+    </div>
+    <div class='tableauPlaceholder' id='viz1739450410209' style='position: relative'><noscript><a href='#'><img alt='MY NGO ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1_17394503962800&#47;MYNGO&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1_17394503962800&#47;MYNGO' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1_17394503962800&#47;MYNGO&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1739450410209');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1627px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    
+</div>
+
+<footer class="text-center mt-4">
+    <p>&copy; 2024 Sales Dashboard | Professional Version</p>
+</footer>
+
+</body>
+</html>
